@@ -1,0 +1,15 @@
+# Downloaded, not versioned -- see tutorials/00_data.ipynb
+data/
+checkpoints/
+cache/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# OS
+.DS_Store

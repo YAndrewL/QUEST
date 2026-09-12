@@ -1,0 +1,18 @@
+# QUEST inference + the downstream analyses in notebooks/.
+# `quest` and `questkit` are in this repo, not on pip; nothing here comes from another repo.
+torch>=2.0
+timm>=0.9.16           # UNI2-h (gated), the H&E encoder every QUEST model reads
+einops>=0.6            # quest/generator.py and quest/eva -- the models themselves
+numpy>=1.24,<2.0
+scipy>=1.10
+scikit-learn>=1.2      # questkit/cn_case.py -- notebook 4
+scikit-image>=0.21     # Otsu, used by the PathoCell white-point conversion
+matplotlib>=3.7
+h5py>=3.8              # PathoCell HDFs
+huggingface_hub>=0.20  # cohort.fetch_pathocell -- notebooks 2 and 3
+jupyter>=1.0
+# segmentation. Pulls TensorFlow; falls back to CPU if it cannot see your CUDA libraries,
+# which is fine for these tutorials -- only slower.
+deepcell>=0.12
+# Only `questkit.stage_data` needs this, and only on the machine holding the source stores.
+# zarr>=2.14
