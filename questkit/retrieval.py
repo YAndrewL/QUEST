@@ -77,8 +77,7 @@ def cohort_records(root=None, *, limit: int | None = None) -> tuple[list[dict], 
     from . import cohort
 
     root = Path(root) if root is not None else cohort.STANFORD_PC_ROOT
-    rows = [r for r in csv.DictReader(gzip.open(root / "cell_composition.csv.gz", "rt"))
-            if r.get("with_staged_patch_data") == "True"]
+    rows = list(csv.DictReader(gzip.open(root / "cell_composition.csv.gz", "rt")))
     types = [c[len("fraction__"):] for c in rows[0] if c.startswith("fraction__")]
     comp = {(r["region_id"], int(r["patch_id"])): r for r in rows}
     man = json.loads((root / "manifest.json").read_text())["patches"]
