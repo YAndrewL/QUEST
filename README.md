@@ -5,6 +5,24 @@
 **QUE**ry-based virtual **ST**aining: multiplex immunofluorescence predicted from H&E, with dynamic
 output panel. The model reads a frozen encoding of the H&E plus a semantic embedding of each marker name.
 
+## Installation
+
+Python 3.10. `deepcell` has no wheel for 3.12.
+
+PyTorch and the CUDA libraries come from conda-forge. This GPU is Blackwell, which needs CUDA 12.8 or newer; the `pytorch` channel's `pytorch-cuda` package stops at 12.4. conda-forge has a CUDA 13 build (PyTorch 2.13). Installing torch from PyPI instead downloads cuDNN, NCCL and the rest as separate wheels.
+
+```bash
+# Miniforge, if you do not already have mamba:
+# https://github.com/conda-forge/miniforge
+
+git clone https://github.com/YAndrewL/QUEST
+mamba create -f env.yaml
+mamba activate quest
+pip install -e .
+```
+
+The conda environment took 2 min 23 s and `pip install -e .` took 6 min 7 s.
+
 ## Quick start
 
 ```python
