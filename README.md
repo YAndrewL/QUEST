@@ -7,9 +7,7 @@ output panel. The model reads a frozen encoding of the H&E plus a semantic embed
 
 ## Installation
 
-Python 3.10. `deepcell` has no wheel for 3.12.
-
-PyTorch and the CUDA libraries come from conda-forge. This GPU is Blackwell, which needs CUDA 12.8 or newer; the `pytorch` channel's `pytorch-cuda` package stops at 12.4. conda-forge has a CUDA 13 build (PyTorch 2.13). Installing torch from PyPI instead downloads cuDNN, NCCL and the rest as separate wheels.
+> For virtual cell typing tutorial, use Python 3.10. `deepcell` has no wheel for 3.12.
 
 ```bash
 # Miniforge, if you do not already have mamba:
